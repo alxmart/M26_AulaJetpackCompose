@@ -1,5 +1,7 @@
 package com.luizafmartinez.m26_aulajetpackcompose
 
+import android.graphics.fonts.FontStyle
+import android.graphics.fonts.FontStyle.FONT_WEIGHT_BOLD
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,15 +12,19 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.luizafmartinez.m26_aulajetpackcompose.ui.theme.M26_AulaJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         setContent {
             M26_AulaJetpackComposeTheme {
+
+                PrimeiroApp()
 
 
                 /*Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -27,7 +33,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     )
                 }*/
-            }
+            } // Fechamento Theme
         }
     }
 
@@ -47,4 +53,34 @@ class MainActivity : ComponentActivity() {
         }
     }*/
 
+} // Fechamento MainActivity
+
+@Composable
+fun PrimeiroApp() {
+    Text(
+        text = "John Doe",
+        color = Color.Blue
+    )
 }
+
+@Preview
+@Composable
+fun PrimeiroAppPreview() {
+    PrimeiroApp()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
