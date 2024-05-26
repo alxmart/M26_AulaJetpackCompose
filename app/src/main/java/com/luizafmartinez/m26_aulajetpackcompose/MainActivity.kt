@@ -23,19 +23,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.luizafmartinez.m26_aulajetpackcompose.componentes.Botao
 import com.luizafmartinez.m26_aulajetpackcompose.ui.theme.M26_AulaJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
         setContent {
             M26_AulaJetpackComposeTheme {
-
                 PrimeiroApp()
-
-
                 /*Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
@@ -66,23 +63,25 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PrimeiroApp() {
-
-    //Row {
-    //Column(
-    Row(
+    //Row
+    Column(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
             .background(color = Color.Gray),
-        /*verticalArrangement = Arrangement.SpaceEvenly,
-        horizontalAlignment = Alignment.CenterHorizontally  */
-        horizontalArrangement = Arrangement.SpaceEvenly,
-        verticalAlignment = Alignment.CenterVertically
+        verticalArrangement = Arrangement.SpaceAround,
+        horizontalAlignment = Alignment.CenterHorizontally
+        //horizontalArrangement = Arrangement.SpaceEvenly,
+        //verticalAlignment = Alignment.CenterVertically
     ) {
         Text(text = "Jamilton", fontSize = 20.sp)
         Text(text = "Ana",fontSize = 20.sp)
-        Text(text = "João",fontSize = 20.sp)
+        //Text(text = "João",fontSize = 20.sp)
+       Botao(texto = "Jamilton") {
+            println("executou")
+        }
     }
+
     /*Text(
         text = "John Doe",
         color = Color.Blue
@@ -94,7 +93,6 @@ fun PrimeiroApp() {
             color = Color.White
         )
     }*/
-
 }
 
 @Preview
@@ -102,19 +100,3 @@ fun PrimeiroApp() {
 fun PrimeiroAppPreview() {
     PrimeiroApp()
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
