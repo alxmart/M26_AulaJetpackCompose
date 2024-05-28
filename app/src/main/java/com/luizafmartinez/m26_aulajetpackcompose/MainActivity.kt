@@ -18,6 +18,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -85,20 +87,35 @@ fun PrimeiroApp() {
             .fillMaxWidth()
             .fillMaxHeight()
     ) {
-        Text(text = "Joseph Nut", fontSize = 20.sp)
+
+
+
+
+        /*Text(text = "Joseph Nut", fontSize = 20.sp)
 
         Column(modifier = Modifier
             .width(100.dp)
             .height(100.dp)
+            //.clip(CircleShape)
+           //.clip(RoundedCornerShape(20.dp))
+            //.clip(RoundedCornerShape(
+            *//*.clip(CutCornerShape(
+                topStart = 20.dp,
+                topEnd = 8.dp,
+                bottomStart = 20.dp,
+                bottomEnd = 8.dp)
+            )*//*
+            //.clip(CutCornerShape(20.dp))
+            *//*.border(2.dp, Color.Red, RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(20.dp))*//*
+            .border(2.dp, Color.Red, CircleShape)
             .clip(CircleShape)
-            .background(Color.Green)
-            /*.padding(start = 8.dp,
-                top = 10.dp,
-                end = 30.dp,
-                bottom = 30.dp)*/
+            .background(Color.Green),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
             Text(text = "JN", fontSize = 32.sp)
-        }
+        }*/
     }
 
     //Row
