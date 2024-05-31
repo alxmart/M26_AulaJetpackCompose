@@ -139,39 +139,40 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier
                     .padding(16.dp)
             ) {
-                items( usuarios.size ) { indice ->
+                items(usuarios.size) { indice ->
                     val nome = usuarios[indice].nome
                     val idade = usuarios[indice].idade
 
-                Row(
-                    modifier = Modifier
-                        .padding(top = 16.dp, bottom = 16.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.carro),
-                        //contentDescription = "Imagem de um avião"
-                        contentDescription = null,
+                    /*Row(
                         modifier = Modifier
-                            .height(80.dp)
-                            .width(80.dp),
-                        contentScale = ContentScale.Crop,
-                        //alignment = Alignment.TopCenter
-                    )
-                    Text(
-                        text = "$nome - $idade",
-                        fontSize = 32.sp,
-                        modifier = Modifier
-                            .padding( start = 16.dp )
-                    )
-                }
+                            .padding(top = 16.dp, bottom = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.carro),
+                            //contentDescription = "Imagem de um avião"
+                            contentDescription = null,
+                            modifier = Modifier
+                                .height(80.dp)
+                                .width(80.dp),
+                            contentScale = ContentScale.Crop,
+                            //alignment = Alignment.TopCenter
+                        )
+                        Text(
+                            text = "$nome - $idade",
+                            fontSize = 32.sp,
+                            modifier = Modifier
+                                .padding( start = 16.dp )
+                        )
+                    } // Fim Row
+                       */
 
-                    Box(
+                    /*Box(
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(1.dp)
-                            .background( Color.Red )
-                    )
+                            .background(Color.Red)
+                    )*/
 
                     /*Text(
                         text = "------",
