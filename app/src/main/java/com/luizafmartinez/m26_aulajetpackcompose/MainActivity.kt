@@ -21,6 +21,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -117,6 +120,17 @@ class MainActivity : ComponentActivity() {
         }
     } // Fim onCreate
 
+
+    @Composable
+    fun SegundoApp() {}
+
+    @Preview
+    @Composable
+    fun SegundoAppPreview() {
+        SegundoApp()
+    }
+
+
     @Composable
     fun PrimeiroApp() {
         Column(
@@ -135,13 +149,41 @@ class MainActivity : ComponentActivity() {
                 .fillMaxHeight()
         ) {
             //LazyRow(
-            LazyColumn(
+            //LazyColumn(
+           /* LazyVerticalGrid(
+                columns = GridCells.Fixed(3),
                 modifier = Modifier
                     .padding(16.dp)
+            )*/
+            LazyHorizontalGrid(
+                //columns = GridCells.Fixed(3),
+                rows = GridCells.Fixed(6),
+                modifier = Modifier
+                    .padding(16.dp)
+                    //.height(600.dp)
             ) {
                 items(usuarios.size) { indice ->
+
                     val nome = usuarios[indice].nome
                     val idade = usuarios[indice].idade
+
+                    Column {
+                        Image(
+                            painter = painterResource(id = R.drawable.carro),
+                            //contentDescription = "Imagem de um avião"
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(8.dp)
+                                .height(80.dp)
+                                .width(80.dp),
+                            contentScale = ContentScale.Crop,
+                            //alignment = Alignment.TopCenter
+                        )
+
+                        Text(
+                            text = "$nome"
+                        )
+                    }
 
                     /*Row(
                         modifier = Modifier
@@ -308,10 +350,9 @@ class MainActivity : ComponentActivity() {
 
     @Preview
     @Composable
-    fun PrimeiroAppPreview() {
-        PrimeiroApp()
+   fun PrimeiroAppPreview() {
+       PrimeiroApp()
     }
-
 
     /*
     @Composable
