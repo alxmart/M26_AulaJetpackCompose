@@ -3,6 +3,7 @@ package com.luizafmartinez.m26_aulajetpackcompose
 import android.graphics.fonts.FontStyle
 import android.graphics.fonts.FontStyle.FONT_WEIGHT_BOLD
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -120,13 +121,34 @@ class MainActivity : ComponentActivity() {
         }
     } // Fim onCreate
 
-
     @Composable
-    fun SegundoApp() {}
+    fun SegundoApp() {
+        var contador = 0
+        Column(
+            modifier = Modifier
+                .background(Color.LightGray)
+                .padding(30.dp)
+                .fillMaxWidth()
+                .fillMaxHeight()
+        ) {
+            Button(
+                onClick = {
+                    contador++
+                    Log.i("contador", "Contador: $contador.toString()")
+            }) {
+                Text(text = "Clique")
+            }
+
+            Text(text = "Contador: $contador")
+
+        } // Fim da coluna
+
+    } // Fim do método SegundoApp
+
 
     @Preview
     @Composable
-    fun SegundoAppPreview() {
+    fun AppPreview() {
         SegundoApp()
     }
 
@@ -150,17 +172,17 @@ class MainActivity : ComponentActivity() {
         ) {
             //LazyRow(
             //LazyColumn(
-           /* LazyVerticalGrid(
-                columns = GridCells.Fixed(3),
-                modifier = Modifier
-                    .padding(16.dp)
-            )*/
+            /* LazyVerticalGrid(
+                 columns = GridCells.Fixed(3),
+                 modifier = Modifier
+                     .padding(16.dp)
+             )*/
             LazyHorizontalGrid(
                 //columns = GridCells.Fixed(3),
                 rows = GridCells.Fixed(6),
                 modifier = Modifier
                     .padding(16.dp)
-                    //.height(600.dp)
+                //.height(600.dp)
             ) {
                 items(usuarios.size) { indice ->
 
@@ -348,11 +370,11 @@ class MainActivity : ComponentActivity() {
 
     }
 
-    @Preview
+    /*@Preview
     @Composable
-   fun PrimeiroAppPreview() {
-       PrimeiroApp()
-    }
+    fun PrimeiroAppPreview() {
+        PrimeiroApp()
+    }*/
 
     /*
     @Composable
