@@ -37,6 +37,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -110,7 +114,7 @@ class MainActivity : ComponentActivity() {
         //enableEdgeToEdge()
         setContent {
             M26_AulaJetpackComposeTheme {
-                PrimeiroApp()
+                //PrimeiroApp()
                 /*Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
@@ -123,7 +127,11 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun SegundoApp() {
-        var contador = 0
+
+        var contador by remember {
+            mutableStateOf(0)
+        }
+
         Column(
             modifier = Modifier
                 .background(Color.LightGray)
@@ -134,12 +142,12 @@ class MainActivity : ComponentActivity() {
             Button(
                 onClick = {
                     contador++
-                    Log.i("contador", "Contador: $contador.toString()")
+                    Log.i("contador", "Contador: $contador")
             }) {
                 Text(text = "Clique")
             }
 
-            Text(text = "Contador: $contador")
+            Text(text = "Contador: $contador.value")
 
         } // Fim da coluna
 
@@ -153,30 +161,30 @@ class MainActivity : ComponentActivity() {
     }
 
 
-    @Composable
+   /* @Composable
     fun PrimeiroApp() {
         Column(
             modifier = Modifier
-                /* .width(200.dp)
-                .height(200.dp)*/
+                *//* .width(200.dp)
+                .height(200.dp)*//*
                 .background(Color.Gray)
                 .border(2.dp, Color.Red)
                 //.padding(30.dp, 10.dp)
                 .padding(30.dp)
                 //.padding(top = 30.dp, end = 30.dp)
-                /*.border(2.dp, Color.Green)
+                *//*.border(2.dp, Color.Green)
                 .padding(30.dp, 10.dp)
-                .border(2.dp, Color.Magenta)*/
+                .border(2.dp, Color.Magenta)*//*
                 .fillMaxWidth()
                 .fillMaxHeight()
         ) {
             //LazyRow(
             //LazyColumn(
-            /* LazyVerticalGrid(
+            *//* LazyVerticalGrid(
                  columns = GridCells.Fixed(3),
                  modifier = Modifier
                      .padding(16.dp)
-             )*/
+             )*//*
             LazyHorizontalGrid(
                 //columns = GridCells.Fixed(3),
                 rows = GridCells.Fixed(6),
@@ -207,7 +215,7 @@ class MainActivity : ComponentActivity() {
                         )
                     }
 
-                    /*Row(
+                    *//*Row(
                         modifier = Modifier
                             .padding(top = 16.dp, bottom = 16.dp),
                         verticalAlignment = Alignment.CenterVertically
@@ -229,24 +237,25 @@ class MainActivity : ComponentActivity() {
                                 .padding( start = 16.dp )
                         )
                     } // Fim Row
-                       */
+                       *//*
 
-                    /*Box(
+                    *//*Box(
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(1.dp)
                             .background(Color.Red)
-                    )*/
+                    )*//*
 
-                    /*Text(
+                    *//*Text(
                         text = "------",
                         fontSize = 32.sp
-                    )*/
+                    )*//*
 
                 }
             }
 
-            /*
+
+            *//*
             for (i in 1..4) {
                 Image(
                     painter = painterResource(id = R.drawable.carro),
@@ -260,11 +269,11 @@ class MainActivity : ComponentActivity() {
                     //alignment = Alignment.TopCenter
                 )
             }
-            */
+            *//*
 
         }
 
-        /*Image(
+        *//*Image(
             painter = painterResource(id = R.drawable.carro),
             //contentDescription = "Imagem de um avião"
             contentDescription = null,
@@ -331,11 +340,11 @@ class MainActivity : ComponentActivity() {
             verticalArrangement = Arrangement.Center
         ) {
             Text(text = "JN", fontSize = 32.sp)
-        }*/
+        }*//*
 
         // Fim Column
 
-        /*
+        *//*
            //Row
            Column(
                 modifier = Modifier
@@ -366,9 +375,9 @@ class MainActivity : ComponentActivity() {
                     color = Color.White
                 )
             }
-            */
+            *//*
 
-    }
+    }*/
 
     /*@Preview
     @Composable
